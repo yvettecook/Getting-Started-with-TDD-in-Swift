@@ -2,7 +2,7 @@
 //  ViewControllerUnitTests.swift
 //  FizzBuzz
 //
-//  Created by Yvette Cook on 28/12/2015.
+//  Created by Yvette Cook on 26/12/2015.
 //  Copyright © 2015 Yvette. All rights reserved.
 //
 
@@ -28,14 +28,14 @@ class ViewControllerUnitTests: XCTestCase {
     }
     
     func testMove1IncrementsScore() {
-        viewController.play("1")
+        viewController.play(Move.Number)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 1)
     }
     
     func testMove2IncrementScore() {
-        viewController.play("1")
-        viewController.play("2")
+        viewController.play(Move.Number)
+        viewController.play(Move.Number)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 2)
     }
@@ -46,27 +46,27 @@ class ViewControllerUnitTests: XCTestCase {
     
     func testFizzIncrementScore() {
         viewController.game?.score = 2
-        viewController.play("Fizz")
+        viewController.play(Move.Fizz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 3)
     }
     
     func testBuzzIncrementScore() {
         viewController.game?.score = 4
-        viewController.play("Buzz")
+        viewController.play(Move.Buzz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 5)
     }
     
     func testFizzBuzzIncrementScore() {
         viewController.game?.score = 14
-        viewController.play("FizzBuzz")
+        viewController.play(Move.FizzBuzz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 15)
     }
     
     func testOnWrongMoveScoreNotIncremented() {
-        viewController.play("Fizz")
+        viewController.play(Move.Fizz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 0)
     }
