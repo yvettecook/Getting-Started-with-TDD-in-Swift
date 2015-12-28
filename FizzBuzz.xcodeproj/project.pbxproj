@@ -17,6 +17,7 @@
 		1AA0E3591C31A6C800FCCFCE /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0E3581C31A6C800FCCFCE /* Brain.swift */; };
 		1AA0E35D1C31AE4600FCCFCE /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0E35C1C31AE4600FCCFCE /* GameTests.swift */; };
 		1AA0E35F1C31AE7A00FCCFCE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0E35E1C31AE7A00FCCFCE /* Game.swift */; };
+		1AA0E3611C31B62D00FCCFCE /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0E3601C31B62D00FCCFCE /* ViewControllerUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1AA0E3581C31A6C800FCCFCE /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 		1AA0E35C1C31AE4600FCCFCE /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		1AA0E35E1C31AE7A00FCCFCE /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1AA0E3601C31B62D00FCCFCE /* ViewControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				1AA0E33F1C31A42B00FCCFCE /* Info.plist */,
 				1AA0E3561C31A5A300FCCFCE /* BrainTests.swift */,
 				1AA0E35C1C31AE4600FCCFCE /* GameTests.swift */,
+				1AA0E3601C31B62D00FCCFCE /* ViewControllerUnitTests.swift */,
 			);
 			path = FizzBuzzTests;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			files = (
 				1AA0E3571C31A5A300FCCFCE /* BrainTests.swift in Sources */,
 				1AA0E35D1C31AE4600FCCFCE /* GameTests.swift in Sources */,
+				1AA0E3611C31B62D00FCCFCE /* ViewControllerUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
