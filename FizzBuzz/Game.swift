@@ -23,7 +23,7 @@ class Game: NSObject {
         let result = brain.check(score + 1)
         
         if result == move {
-            score++
+            score += 1
             return (true, score)
         } else {
             return (false, score)
