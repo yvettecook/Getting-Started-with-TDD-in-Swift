@@ -16,9 +16,9 @@ class ViewControllerUnitTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        viewController = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        UIApplication.shared.keyWindow!.rootViewController = viewController
         
         let _ = viewController.view
     }
@@ -28,14 +28,14 @@ class ViewControllerUnitTests: XCTestCase {
     }
     
     func testMove1IncrementsScore() {
-        viewController.play(Move.Number)
+        viewController.play(Move.number)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 1)
     }
     
     func testMove2IncrementScore() {
-        viewController.play(Move.Number)
-        viewController.play(Move.Number)
+        viewController.play(Move.number)
+        viewController.play(Move.number)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 2)
     }
@@ -46,27 +46,27 @@ class ViewControllerUnitTests: XCTestCase {
     
     func testFizzIncrementScore() {
         viewController.game?.score = 2
-        viewController.play(Move.Fizz)
+        viewController.play(Move.fizz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 3)
     }
     
     func testBuzzIncrementScore() {
         viewController.game?.score = 4
-        viewController.play(Move.Buzz)
+        viewController.play(Move.buzz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 5)
     }
     
     func testFizzBuzzIncrementScore() {
         viewController.game?.score = 14
-        viewController.play(Move.FizzBuzz)
+        viewController.play(Move.fizzBuzz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 15)
     }
     
     func testOnWrongMoveScoreNotIncremented() {
-        viewController.play(Move.Fizz)
+        viewController.play(Move.fizz)
         let newScore = viewController.gameScore
         XCTAssertEqual(newScore, 0)
     }

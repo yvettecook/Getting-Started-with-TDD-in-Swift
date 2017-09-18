@@ -9,8 +9,8 @@
 import Foundation
 
 enum Move {
-    case Number
-    case Fizz
-    case Buzz
-    case FizzBuzz
+    case number
+    case fizz
+    case buzz
+    case fizzBuzz
 }

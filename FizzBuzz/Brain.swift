@@ -10,31 +10,31 @@ import Foundation
 
 class Brain: NSObject {
     
-    func isDivisibleByThree(number: Int) -> Bool {
+    func isDivisibleByThree(_ number: Int) -> Bool {
         return isDivisibleBy(3, number: number)
     }
     
-    func isDivisibleByFive(number: Int) -> Bool {
+    func isDivisibleByFive(_ number: Int) -> Bool {
         return isDivisibleBy(5, number: number)
     }
     
-    func isDivisibleByFifteen(number: Int) -> Bool {
+    func isDivisibleByFifteen(_ number: Int) -> Bool {
         return isDivisibleBy(15, number: number)
     }
     
-    func isDivisibleBy(divisor: Int, number: Int) -> Bool {
+    func isDivisibleBy(_ divisor: Int, number: Int) -> Bool {
         return number % divisor == 0
     }
     
-    func check(number: Int) -> Move {
+    func check(_ number: Int) -> Move {
         if isDivisibleByFifteen(number) {
-            return Move.FizzBuzz
+            return Move.fizzBuzz
         } else if isDivisibleByThree(number) {
-            return Move.Fizz
+            return Move.fizz
         } else if isDivisibleByFive(number){
-            return Move.Buzz
+            return Move.buzz
         } else {
-            return Move.Number
+            return Move.number
         }
     }
     

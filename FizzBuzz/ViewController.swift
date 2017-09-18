@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                 print("gameScore is nil")
                 return
             }
-            numberButton.setTitle("\(unwrappedScore)", forState: .Normal)
+            numberButton.setTitle("\(unwrappedScore)", for: UIControlState())
         }
     }
     
@@ -38,14 +38,9 @@ class ViewController: UIViewController {
         }
         
         gameScore = checkedGame.score
-    }
+    }    
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    
-    func play(move: Move) {
+    func play(_ move: Move) {
         guard let unwrappedGame = game else {
             print("Game is nil!")
             return
@@ -54,16 +49,16 @@ class ViewController: UIViewController {
         gameScore = response.score
     }
     
-    @IBAction func buttonTapped(sender: UIButton) {
+    @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender {
         case numberButton:
-            play(Move.Number)
+            play(Move.number)
         case fizzButton:
-            play(Move.Fizz)
+            play(Move.fizz)
         case buzzButton:
-            play(Move.Buzz)
+            play(Move.buzz)
         case fizzBuzzButton:
-            play(Move.FizzBuzz)
+            play(Move.fizzBuzz)
         default:
             print("Invalid selection")
         }
