@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Brain: NSObject {
+final class Brain {
     
     func isDivisibleByThree(_ number: Int) -> Bool {
         return isDivisibleBy(3, number: number)
@@ -23,19 +23,21 @@ class Brain: NSObject {
     }
     
     func isDivisibleBy(_ divisor: Int, number: Int) -> Bool {
+        guard divisor != 0 else {
+            return false
+        }
         return number % divisor == 0
     }
     
     func check(_ number: Int) -> Move {
+        var nextMove: Move = .number
         if isDivisibleByFifteen(number) {
-            return Move.fizzBuzz
+            nextMove = .fizzBuzz
         } else if isDivisibleByThree(number) {
-            return Move.fizz
-        } else if isDivisibleByFive(number){
-            return Move.buzz
-        } else {
-            return Move.number
+            nextMove = .fizz
+        } else if isDivisibleByFive(number) {
+            nextMove = .buzz
         }
+        return nextMove
     }
-    
 }

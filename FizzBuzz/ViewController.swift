@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    var game : Game?
+    var game: Game?
     
     @IBOutlet weak var numberButton: UIButton!
     @IBOutlet weak var fizzButton: UIButton!
@@ -31,13 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         game = Game()
-        
-        guard let checkedGame = game else {
-            print("Game is nil")
-            return
-        }
-        
-        gameScore = checkedGame.score
+        gameScore = game?.score
     }    
     
     func play(_ move: Move) {
@@ -52,13 +46,13 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender {
         case numberButton:
-            play(Move.number)
+            play(.number)
         case fizzButton:
-            play(Move.fizz)
+            play(.fizz)
         case buzzButton:
-            play(Move.buzz)
+            play(.buzz)
         case fizzBuzzButton:
-            play(Move.fizzBuzz)
+            play(.fizzBuzz)
         default:
             print("Invalid selection")
         }

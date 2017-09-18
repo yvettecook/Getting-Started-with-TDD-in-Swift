@@ -25,51 +25,55 @@ class BrainTests: XCTestCase {
 
     func testIsDivisibleByThree() {
         let result = brain.isDivisibleByThree(3)
-        XCTAssertEqual(result, true)
+        XCTAssertTrue(result)
     }
 
     func testIsNotDivisibleByThree() {
         let result = brain.isDivisibleByThree(1)
-        XCTAssertEqual(result, false)
+        XCTAssertFalse(result)
     }
     
     func testIsDivisibleByFive() {
         let result = brain.isDivisibleByFive(5)
-        XCTAssertEqual(result, true)
+        XCTAssertTrue(result)
     }
     
     func testIsNotDivisibleByFive() {
         let result = brain.isDivisibleByFive(1)
-        XCTAssertEqual(result, false)
+        XCTAssertFalse(result)
     }    
 
     func testIsDivisibleByFifteen() {
         let result = brain.isDivisibleByFifteen(15)
-        XCTAssertEqual(result, true)
+        XCTAssertTrue(result)
     }
     
     func testIsNotDivisibleByFifteen() {
         let result = brain.isDivisibleByFifteen(1)
-        XCTAssertEqual(result, false)
+        XCTAssertFalse(result)
     }
     
+    func testIsDivisibleByZero() {
+        let result = brain.isDivisibleBy(0, number: 1)
+        XCTAssertFalse(result)
+    }
     func testSayFizz() {
         let result = brain.check(3)
-        XCTAssertEqual(result, Move.fizz)
+        XCTAssertEqual(result, .fizz)
     }
     
     func testSayBuzz() {
         let result = brain.check(5)
-        XCTAssertEqual(result, Move.buzz)
+        XCTAssertEqual(result, .buzz)
     }
     
     func testSayFizzBuzz() {
         let result = brain.check(15)
-        XCTAssertEqual(result, Move.fizzBuzz)
+        XCTAssertEqual(result, .fizzBuzz)
     }
     
     func testSayNumber() {
         let result = brain.check(1)
-        XCTAssertEqual(result, Move.number)
+        XCTAssertEqual(result, .number)
     }
 }
