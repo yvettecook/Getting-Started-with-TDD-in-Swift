@@ -24,7 +24,7 @@ final class ViewController: UIViewController {
                 print("gameScore is nil")
                 return
             }
-            numberButton.setTitle("\(unwrappedScore)", for: UIControlState())
+            numberButton.setTitle("\(unwrappedScore)", for: UIControl.State())
         }
     }
     
